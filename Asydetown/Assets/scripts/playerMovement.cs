@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour {
 
+	//used for calculating distance from camera to ground
+	public GameObject ground;
+	public Camera mainCam;
 
+	//used for movement
 	public float speed = 5f;
 	Rigidbody rb;
 	Vector3 movement;
@@ -21,6 +25,8 @@ public class playerMovement : MonoBehaviour {
 
 		targetPos = transform.position;
 		isMoving = false;
+
+
 	}
 
 	void Update()
@@ -74,10 +80,13 @@ public class playerMovement : MonoBehaviour {
 		//rb.velocity = movement;
 
 		mousePos = Input.mousePosition;
-		mousePos.z = 20;
+
+
+		mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
 		mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+
 		mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
-		transform.LookAt (mousePos);
+		transform.LookAt (mousePos, Vector3.up);
 		//Debug.Log ("The mousePos is : " + mousePos);
 
 

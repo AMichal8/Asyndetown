@@ -13,7 +13,7 @@ public class colorTimer : MonoBehaviour {
 	void Start () 
 	{
 		colorManager = GetComponent<changeColor> ();
-		colorManager.resetObjColor ();
+		//colorManager.resetObjColor ();
 	}
 	
 	// Update is called once per frame
@@ -21,27 +21,27 @@ public class colorTimer : MonoBehaviour {
 	{
 		if (maxSeconds != 0) 
 		{
-			Debug.Log (secondsTimer / maxSeconds + " is fraction of time.");
+			//Debug.Log (secondsTimer / maxSeconds + " is fraction of time.");
 			colorManager.changeObjColor (1, secondsTimer / maxSeconds);
 		}
 		else
 			colorManager.resetObjColor ();
 	}
 
-	void OnTriggerEnter (Collider other)
-	{
-		addToTimer (10f);
-	}
-	void OnTriggerStay(Collider other)
-	{
-		addToTimer (4f);
-	}
-	void OnTriggerExit(Collider other)
-	{
-		StartCoroutine(subtractFromTimer (1f));	
-	}
+//	void OnTriggerEnter (Collider other)
+//	{
+//		addToTimer (10f);
+//	}
+//	void OnTriggerStay(Collider other)
+//	{
+//		addToTimer (4f);
+//	}
+//	void OnTriggerExit(Collider other)
+//	{
+//		StartCoroutine(subtractFromTimer (1f));	
+//	}
 
-	void addToTimer(float seconds)
+	public void addToTimer(float seconds)
 	{
 		secondsTimer += seconds * Time.deltaTime;
 

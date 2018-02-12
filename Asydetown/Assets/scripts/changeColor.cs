@@ -17,7 +17,7 @@ public class changeColor : MonoBehaviour {
 	void Start () 
 	{
 		myRend = GetComponent<Renderer> ();
-		originalColor = myRend.material.color;
+		originalColor = myRend.material.GetColor ("_Color");
 		originalTransparency = myRend.material.GetFloat ("_Transparency");
 	}
 	
@@ -43,18 +43,5 @@ public class changeColor : MonoBehaviour {
 		myRend.material.SetFloat ("_Transparency", originalTransparency);
 	}
 
-//	void OnTriggerEnter(Collider other)
-//	{
-//		if (other.CompareTag ("Player")) 
-//		{
-//			changeObjColor (1f);
-//		}
-//	}
-//	void OnTriggerExit(Collider other)
-//	{
-//		if (other.CompareTag ("Player")) 
-//		{
-//			resetObjColor();
-//		}
-//	}
+
 }
