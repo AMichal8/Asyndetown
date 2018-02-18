@@ -15,38 +15,25 @@ public class fieldOfView : MonoBehaviour {
 
 	List<Vector3> vAngles = new List<Vector3>();
 
+	buildingMemory currentBuildingMid;
+	buildingMemory currentBuildingLeftMid;
+	buildingMemory currentBuildingLeft;
+	buildingMemory currentBuildingRightMid;
+	buildingMemory currentBuildingRight;
+
 
 	void Start()
 	{
 		if (vAngles != null)
 			vAngles.Clear();
 		
-		Vector3 test = DirectionFromAngle(-viewAngle/2, false);
-		Vector3 test2 = DirectionFromAngle (viewAngle/2, false);
 
-//		Debug.Log ("test  "+test);
-//		Debug.Log ("test and test2  " + (test + test2));
-//		Debug.Log ("test2  " +test2);
-//
-//		Debug.DrawRay (transform.position,  test, Color.yellow, 0, false); //test is left hand side endpoint
-//		Debug.DrawRay (transform.position,  test+test+test2, Color.yellow, 0, false);		
-//		Debug.DrawRay (transform.position,  test+test2, Color.yellow, 0, false); // halfway between test and test2
-//		Debug.DrawRay (transform.position,  test+test2+test2, Color.yellow, 0, false);
-//		Debug.DrawRay (transform.position,  test2, Color.yellow, 0, false);//test2 is right hand side endpoint
-
-
-		vAngles.Add (test);
-		vAngles.Add (test + test + test2);
-		vAngles.Add (test + test2);
-		vAngles.Add (test + test2 + test2);
-		vAngles.Add (test2);
 
 	}
 
 	void Update()
 	{
 		
-
 		FindBuildings ();
 	}
 
@@ -66,22 +53,158 @@ public class fieldOfView : MonoBehaviour {
 
 
 		Vector3 pos = transform.position;
-		Vector3 dir = transform.forward * viewRadius;
+		Vector3 mid = transform.forward * viewRadius;
 
 
 
 
-		if (Physics.Raycast(pos, dir, out hit, viewRadius))
+		if (Physics.Raycast(pos, mid, out hit, viewRadius))
 		{
-			Debug.Log ("Raycasted!");
+			//Debug.Log ("Raycasted!");
 
-			if(hit.collider.CompareTag("building"))
-				hit.collider.gameObject.GetComponent<buildingMemory>().contacted();
+			if (hit.collider.CompareTag ("building")) {
 
+				if (currentBuildingMid == null) 
+				{
+					currentBuildingMid = hit.collider.gameObject.GetComponent<buildingMemory> ();
+					currentBuildingMid.contacted ();
 
+				} 
+				else if (hit.collider.gameObject.GetComponent<buildingMemory> () == currentBuildingMid) 
+				{
+					currentBuildingMid.contacted ();
+				} 
+				else 
+				{
+					currentBuildingMid.uncontacted ();
+					currentBuildingMid = null;
+				}
 
-			}
+			} 
+				
 		}
+
+		Vector3 left = DirectionFromAngle(-viewAngle/2, false) * viewRadius;
+
+		if (Physics.Raycast(pos, left, out hit, viewRadius))
+		{
+			//Debug.Log ("Raycasted!");
+
+			if (hit.collider.CompareTag ("building")) {
+
+				if (currentBuildingLeft == null) 
+				{
+					currentBuildingLeft = hit.collider.gameObject.GetComponent<buildingMemory> ();
+					currentBuildingLeft.contacted ();
+
+				} 
+				else if (hit.collider.gameObject.GetComponent<buildingMemory> () == currentBuildingLeft) 
+				{
+					currentBuildingLeft.contacted ();
+				} 
+				else 
+				{
+					currentBuildingLeft.uncontacted ();
+					currentBuildingLeft = null;
+				}
+
+			} 
+
+		}
+
+
+
+		Vector3 right = DirectionFromAngle (viewAngle/2, false) * viewRadius;
+
+		if (Physics.Raycast(pos, right, out hit, viewRadius))
+		{
+			//Debug.Log ("Raycasted!");
+
+			if (hit.collider.CompareTag ("building")) 
+			{
+
+				if (currentBuildingRight == null) 
+				{
+					currentBuildingRight = hit.collider.gameObject.GetComponent<buildingMemory> ();
+					currentBuildingRight.contacted ();
+
+				} 
+				else if (hit.collider.gameObject.GetComponent<buildingMemory> () == currentBuildingRight) 
+				{
+					currentBuildingRight.contacted ();
+				} 
+				else 
+				{
+					currentBuildingRight.uncontacted ();
+					currentBuildingRight = null;
+				}
+
+			} 
+
+		}
+
+		Vector3 leftMid = left + mid * viewRadius;
+
+		if (Physics.Raycast(pos, leftMid, out hit, viewRadius))
+		{
+			//Debug.Log ("Raycasted!");
+
+			if (hit.collider.CompareTag ("building")) {
+
+				if (currentBuildingLeftMid == null) 
+				{
+					currentBuildingLeftMid = hit.collider.gameObject.GetComponent<buildingMemory> ();
+					currentBuildingLeftMid.contacted ();
+
+				} 
+				else if (hit.collider.gameObject.GetComponent<buildingMemory> () == currentBuildingLeftMid) 
+				{
+					currentBuildingLeftMid.contacted ();
+				} 
+				else 
+				{
+					currentBuildingLeftMid.uncontacted ();
+					currentBuildingLeftMid = null;
+				}
+
+			} 
+
+		}
+
+
+
+		Vector3 rightMid = right + mid * viewRadius;
+
+		if (Physics.Raycast(pos, rightMid, out hit, viewRadius))
+		{
+			//Debug.Log ("Raycasted!");
+
+			if (hit.collider.CompareTag ("building")) {
+
+				if (currentBuildingRightMid == null) 
+				{
+					currentBuildingRightMid = hit.collider.gameObject.GetComponent<buildingMemory> ();
+					currentBuildingRightMid.contacted ();
+
+				} 
+				else if (hit.collider.gameObject.GetComponent<buildingMemory> () == currentBuildingRightMid) 
+				{
+					currentBuildingRightMid.contacted ();
+				} 
+				else 
+				{
+					currentBuildingRightMid.uncontacted ();
+					currentBuildingRightMid = null;
+				}
+
+			} 
+
+		}
+
+
+
+
+	}
 
 
 }

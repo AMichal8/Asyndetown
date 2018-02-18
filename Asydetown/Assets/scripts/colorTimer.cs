@@ -9,23 +9,29 @@ public class colorTimer : MonoBehaviour {
 	[SerializeField]
 	float maxSeconds = 0f;
 
+
 	// Use this for initialization
 	void Start () 
 	{
 		colorManager = GetComponent<changeColor> ();
+
 		//colorManager.resetObjColor ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (maxSeconds != 0) 
-		{
+
+
+
+		if (maxSeconds != 0) {
 			//Debug.Log (secondsTimer / maxSeconds + " is fraction of time.");
 			colorManager.changeObjColor (1, secondsTimer / maxSeconds);
-		}
-		else
+		} 
+		else 
+		{
 			colorManager.resetObjColor ();
+		}
 	}
 
 //	void OnTriggerEnter (Collider other)
@@ -52,7 +58,7 @@ public class colorTimer : MonoBehaviour {
 		//Debug.Log ("MaxSeconds = " + maxSeconds);
 	}
 
-	IEnumerator subtractFromTimer(float seconds)
+	public IEnumerator subtractFromTimer(float seconds)
 	{
 		while (secondsTimer > 0) 
 		{
