@@ -22,8 +22,6 @@ public class colorTimer : MonoBehaviour {
 	void Update () 
 	{
 
-
-
 		if (maxSeconds != 0) {
 			//Debug.Log (secondsTimer / maxSeconds + " is fraction of time.");
 			colorManager.changeObjColor (1, secondsTimer / maxSeconds);

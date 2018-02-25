@@ -5,6 +5,7 @@ using UnityEngine;
 public class changeColor : MonoBehaviour {
 
 	Color originalColor;
+	Color goalColor;
 	Color lerpedColor;
 
 	public Color newColor;
@@ -19,6 +20,7 @@ public class changeColor : MonoBehaviour {
 		myRend = GetComponent<Renderer> ();
 		originalColor = myRend.material.GetColor ("_Color");
 		originalTransparency = myRend.material.GetFloat ("_Transparency");
+		goalColor = Color.blue;
 	}
 	
 
@@ -36,7 +38,10 @@ public class changeColor : MonoBehaviour {
 		return a;
 
 	}
-
+	public void setGoalColor()
+	{
+		myRend.material.color = goalColor;
+	}
 	public void resetObjColor()
 	{
 		myRend.material.color = originalColor;

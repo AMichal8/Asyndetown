@@ -229,6 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &30498764
@@ -352,6 +353,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &31457621
@@ -475,6 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &48791552
@@ -598,6 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &62760994
@@ -721,8 +725,66 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
+--- !u!1001 &74945443
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 2.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962753113161536, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114595877071188554, guid: a5579b91b929e6d4e86582d81f17f0ec,
+        type: 2}
+      propertyPath: ground
+      value: 
+      objectReference: {fileID: 1982500465}
+    - target: {fileID: 114595877071188554, guid: a5579b91b929e6d4e86582d81f17f0ec,
+        type: 2}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1602822490}
+    - target: {fileID: 23214751586920310, guid: a5579b91b929e6d4e86582d81f17f0ec,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 083425b12818b0e49814c7177500a3af, type: 2}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a5579b91b929e6d4e86582d81f17f0ec, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &86118994
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,6 +906,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &94779462
@@ -967,6 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &120808772
@@ -1090,6 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &126099152
@@ -1213,6 +1278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &128000106
@@ -1336,6 +1402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &132734181
@@ -1459,6 +1526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &158349449
@@ -1582,6 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &188484740
@@ -1705,6 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &199682915
@@ -1828,6 +1898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &211360746
@@ -1951,6 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &215748608
@@ -2074,6 +2146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &233768391
@@ -2197,6 +2270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &235275105
@@ -2320,6 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &255082829
@@ -2443,6 +2518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &260866726
@@ -2566,6 +2642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &273367345
@@ -2689,6 +2766,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &278393810
@@ -2812,6 +2890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &302823230
@@ -2935,6 +3014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &310072975
@@ -3058,6 +3138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &315360464
@@ -3182,6 +3263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &326868945
@@ -3305,6 +3387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &348833038
@@ -3428,6 +3511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &373373135
@@ -3551,6 +3635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &377266588
@@ -3674,6 +3759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &382646589
@@ -3797,6 +3883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &386614685
@@ -3920,6 +4007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &387362697
@@ -4043,6 +4131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &403279077
@@ -4166,6 +4255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &441903074
@@ -4289,6 +4379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &448258862
@@ -4412,6 +4503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &451247288
@@ -4535,6 +4627,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &452283375
@@ -4658,6 +4751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &474928245
@@ -4781,6 +4875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &487883334
@@ -4904,6 +4999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &527103362
@@ -5027,6 +5123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &545353966
@@ -5150,6 +5247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &558660832
@@ -5273,6 +5371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &570123633
@@ -5396,6 +5495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &578098217
@@ -5519,6 +5619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &579063715
@@ -5643,6 +5744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &591079646
@@ -5766,6 +5868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &593680753
@@ -5889,6 +5992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &624717057
@@ -6012,6 +6116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &626139723
@@ -6135,6 +6240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &636115134
@@ -6258,6 +6364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &636412481
@@ -6381,6 +6488,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &639286863
@@ -6504,6 +6612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &643052088
@@ -6627,6 +6736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &648755342
@@ -6750,6 +6860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &658815596
@@ -6873,6 +6984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &661109315
@@ -6996,6 +7108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &668913137
@@ -7119,6 +7232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &669635713
@@ -7242,6 +7356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &676360337
@@ -7365,6 +7480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &681942751
@@ -7489,6 +7605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &682040244
@@ -7612,6 +7729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &689394458
@@ -7735,6 +7853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &690905896
@@ -7858,6 +7977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &691869305
@@ -7981,6 +8101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &692399727
@@ -8104,6 +8225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &693616223
@@ -8227,6 +8349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &695512151
@@ -8350,6 +8473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &728191680
@@ -8473,6 +8597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &737471043
@@ -8596,6 +8721,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &772664303
@@ -8719,6 +8845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &776371160
@@ -8842,6 +8969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &783944990
@@ -8965,6 +9093,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &815418114
@@ -9088,6 +9217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &818944585
@@ -9211,6 +9341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &870976462
@@ -9334,6 +9465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &875459056
@@ -9457,6 +9589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &876310262
@@ -9580,6 +9713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &885781519
@@ -9703,6 +9837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &888514884
@@ -9826,6 +9961,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &890640879
@@ -9949,6 +10085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &936503650
@@ -10072,6 +10209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &943367833
@@ -10195,6 +10333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &984510554
@@ -10318,6 +10457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1005273220
@@ -10441,8 +10581,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
+--- !u!1 &1020793850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1020793852}
+  - component: {fileID: 1020793851}
+  m_Layer: 0
+  m_Name: GoalManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1020793851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020793850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d52d5b64cb9f5d94197e98f3fbfe3bb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildings: []
+--- !u!4 &1020793852
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1020793850}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.24, y: 0.6, z: 2.86}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1031344278
 GameObject:
   m_ObjectHideFlags: 0
@@ -10564,6 +10746,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1052326597
@@ -10687,6 +10870,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1052927944
@@ -10810,6 +10994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1060503169
@@ -10933,153 +11118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
---- !u!1 &1077653831
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1077653837}
-  - component: {fileID: 1077653836}
-  - component: {fileID: 1077653835}
-  - component: {fileID: 1077653834}
-  - component: {fileID: 1077653833}
-  - component: {fileID: 1077653838}
-  - component: {fileID: 1077653832}
-  - component: {fileID: 1077653839}
-  m_Layer: 0
-  m_Name: player
-  m_TagString: Player
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &1077653832
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2067494, y: 1, z: 2.121748}
-  m_Center: {x: -0.016099215, y: 0, z: 1.0316505}
---- !u!54 &1077653833
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 1
-  m_Constraints: 84
-  m_CollisionDetection: 0
---- !u!23 &1077653834
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 2100000, guid: 94ba9875806fc35439fc37c245cee92e, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!135 &1077653835
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &1077653836
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1077653837
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.24, y: 0.6, z: 2.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1517471691}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1077653838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a20c5ab9324917340af47b13d82b0205, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ground: {fileID: 1982500465}
-  mainCam: {fileID: 1602822490}
-  speed: 5
---- !u!114 &1077653839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077653831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6628fe6eebc3e9442a27c2135f0ecf49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  viewRadius: 4.52
-  viewAngle: 68
-  viewMask:
-    serializedVersion: 2
-    m_Bits: 256
-  visibleTargets: []
 --- !u!1 &1082275601
 GameObject:
   m_ObjectHideFlags: 0
@@ -11201,6 +11242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1137910766
@@ -11324,6 +11366,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1160389411
@@ -11447,6 +11490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1180190785
@@ -11570,6 +11614,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1194986341
@@ -11693,6 +11738,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1203746292
@@ -11816,6 +11862,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1214364217
@@ -11939,6 +11986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1232980303
@@ -12062,6 +12110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1235644879
@@ -12185,6 +12234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1249070404
@@ -12308,6 +12358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1277257966
@@ -12431,6 +12482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1281272871
@@ -12554,6 +12606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1285775952
@@ -12677,6 +12730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1323283877
@@ -12800,6 +12854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1327130946
@@ -12923,6 +12978,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1339407032
@@ -13046,6 +13102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1342682498
@@ -13169,6 +13226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1352379364
@@ -13292,6 +13350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1356233049
@@ -13415,6 +13474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1356858234
@@ -13538,6 +13598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1360245446
@@ -13661,6 +13722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1365269525
@@ -13785,6 +13847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1368539775
@@ -13908,6 +13971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1372347173
@@ -14031,6 +14095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1381401660
@@ -14154,6 +14219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1384023351
@@ -14277,6 +14343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1395551066
@@ -14400,6 +14467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1443574083
@@ -14523,6 +14591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1444933942
@@ -14647,6 +14716,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1446794860
@@ -14770,6 +14840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1473783314
@@ -14893,6 +14964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1475636551
@@ -15016,6 +15088,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1515824652
@@ -15139,59 +15212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
---- !u!1001 &1517471690
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1077653837}
-    m_Modifications:
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 2.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 221.03838
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1517471691 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4923913693301782, guid: 4c1ecc3b6b59cd844beb7dc8a38c4935,
-    type: 2}
-  m_PrefabInternal: {fileID: 1517471690}
 --- !u!1 &1527961961
 GameObject:
   m_ObjectHideFlags: 0
@@ -15313,6 +15336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1540709616
@@ -15436,6 +15460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1556074682
@@ -15559,6 +15584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1577850500
@@ -15682,6 +15708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1592518159
@@ -15805,6 +15832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1592992145
@@ -15928,6 +15956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1597995774
@@ -16051,6 +16080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1602532959
@@ -16174,6 +16204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1602822486
@@ -16188,6 +16219,7 @@ GameObject:
   - component: {fileID: 1602822489}
   - component: {fileID: 1602822488}
   - component: {fileID: 1602822487}
+  - component: {fileID: 1602822492}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16234,7 +16266,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 54.8
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -16259,12 +16291,25 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1602822486}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 51.08, z: 0}
+  m_LocalPosition: {x: 0, y: 27.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1602822492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1602822486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c6d94068f8677444b39665ce52ae50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothTime: 0.4
+  offsetHeight: 35
 --- !u!1 &1618196646
 GameObject:
   m_ObjectHideFlags: 0
@@ -16386,6 +16431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1656308451
@@ -16509,6 +16555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1673322311
@@ -16632,6 +16679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1680845018
@@ -16755,6 +16803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1692310902
@@ -16878,6 +16927,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1700296524
@@ -17001,6 +17051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1701209314
@@ -17124,6 +17175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1701661737
@@ -17247,6 +17299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1710792162
@@ -17370,6 +17423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1740587847
@@ -17493,6 +17547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1753650527
@@ -17616,6 +17671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1754556556
@@ -17740,6 +17796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1810455509
@@ -17863,6 +17920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1818863339
@@ -17986,6 +18044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1822304153
@@ -18109,6 +18168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1834799086
@@ -18232,6 +18292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1843483333
@@ -18355,6 +18416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1852233212
@@ -18478,6 +18540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1857155976
@@ -18601,6 +18664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1909082632
@@ -18724,6 +18788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1915219928
@@ -18847,6 +18912,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1921557838
@@ -18970,6 +19036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1977498785
@@ -19093,6 +19160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1979864530
@@ -19216,6 +19284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1982500465
@@ -19300,7 +19369,7 @@ Transform:
   m_LocalScale: {x: -11.210396, y: 6.9097643, z: -17.20575}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1987101733
 GameObject:
@@ -19423,6 +19492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &1995047057
@@ -19546,6 +19616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2007198827
@@ -19669,6 +19740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2024250332
@@ -19792,6 +19864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2028831325
@@ -19983,7 +20056,7 @@ Transform:
   - {fileID: 815418115}
   - {fileID: 158349450}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2047469318
 GameObject:
@@ -20106,6 +20179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2071476982
@@ -20229,6 +20303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2079059550
@@ -20289,13 +20364,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2079059550}
-  m_LocalRotation: {x: 0.6830127, y: -0.18301266, z: 0.18301266, w: 0.6830127}
+  m_LocalRotation: {x: 0.6830127, y: -0.18301274, z: 0.18301274, w: 0.6830127}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 90, y: -30, z: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 30}
 --- !u!1 &2080076394
 GameObject:
   m_ObjectHideFlags: 0
@@ -20417,6 +20492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2084383194
@@ -20540,6 +20616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2104692226
@@ -20663,6 +20740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5
 --- !u!1 &2139235568
@@ -20786,5 +20864,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8f64527b1fc5c4ca61ebc0611a3913, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGoal: 0
   importanceRanking: 0
   importanceThreshold: 5

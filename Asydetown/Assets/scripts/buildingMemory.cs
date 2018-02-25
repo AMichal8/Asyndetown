@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class buildingMemory : MonoBehaviour {
 
+	public bool isGoal = false;
 
 	float secsHighlighted;
 	float lookAtCounter = 0f;
 
-
+	bool isTargetLocation;
 
 	public int importanceRanking;
 	public int importanceThreshold = 5;
@@ -17,16 +18,21 @@ public class buildingMemory : MonoBehaviour {
 	bool wasHit = false;
 
 	colorTimer myCT;
+	changeColor mycC;
 
 	// Use this for initialization
 	void Start () 
 	{
 		myCT = GetComponent<colorTimer> ();
+		mycC = GetComponent<changeColor> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
-	{
+	{	
+		if (isGoal)
+			mycC.setGoalColor ();
+		
 		if (isHit) 
 		{
 			wasHit = true;
@@ -48,6 +54,10 @@ public class buildingMemory : MonoBehaviour {
 		checkImportance ();
 
 		GetComponent<colorTimer> ().addToTimer (2);
+	}
+	public bool checkContact()
+	{
+		return isHit;
 	}
 	public void uncontacted()
 	{
