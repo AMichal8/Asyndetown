@@ -23,12 +23,17 @@ public class CameraBehavior : MonoBehaviour {
 	Vector3 buildingPosition;
 	Vector3 offset;
 	private Camera mainCam;
+	float startingHeight;
+	bool searchingForPlayer = false;
 
 	// Called on awake
 	void Awake () 
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
-
+		if (player == null)
+			searchingForPlayer = true;
+			
+		startingHeight = transform.position.y;
 		offset = new Vector3 (0, offsetHeight, 0);
 		mainCam = Camera.main;
 	}
@@ -43,10 +48,31 @@ public class CameraBehavior : MonoBehaviour {
 	}
 	void LateUpdate () 
 	{
-		FollowPlayer ();
+		if (!searchingForPlayer) 
+		{
+			if(player.GetComponent<playerMovement>().playerHasMoved)
+				FollowPlayer ();
+
+		} 
+		else 
+		{
+			FindPlayer ();
+		}
 
 		//Move ();
 		//Zoom ();
+	}
+	public void zoomToStartingHeight()
+	{
+		offset = new Vector3 (0, startingHeight, 0);
+		transform.position = Vector3.SmoothDamp (transform.position, playerPosition + offset, ref velocity, smoothTime);
+	}
+	void FindPlayer()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+
+		if (player != null)
+			searchingForPlayer = false;
 	}
 	public void setTargetBuildingPos(Vector3 pos)
 	{

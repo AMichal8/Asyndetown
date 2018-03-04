@@ -14,6 +14,9 @@ public class buildingMemory : MonoBehaviour {
 	public int importanceRanking;
 	public int importanceThreshold = 5;
 
+	public float colorAppreciateValue = 10f;
+	public float colorDepreciateValue = 3f;
+
 	bool isHit = false;
 	bool wasHit = false;
 
@@ -36,13 +39,13 @@ public class buildingMemory : MonoBehaviour {
 		if (isHit) 
 		{
 			wasHit = true;
-			myCT.addToTimer (5f);
+			myCT.addToTimer (colorAppreciateValue);
 
 		}
 
 		if (!isHit && wasHit) 
 		{
-			StartCoroutine(myCT.subtractFromTimer (3f));	
+			StartCoroutine(myCT.subtractFromTimer (colorDepreciateValue));	
 			wasHit = false;
 		}
 
@@ -53,7 +56,7 @@ public class buildingMemory : MonoBehaviour {
 		lookAtCounter += 1f;
 		checkImportance ();
 
-		GetComponent<colorTimer> ().addToTimer (2);
+		myCT.addToTimer (2);
 	}
 	public bool checkContact()
 	{

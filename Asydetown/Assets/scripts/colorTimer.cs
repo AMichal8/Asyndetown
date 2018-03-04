@@ -47,10 +47,12 @@ public class colorTimer : MonoBehaviour {
 
 	public void addToTimer(float seconds)
 	{
+		
 		secondsTimer += seconds * Time.deltaTime;
 
 		if (secondsTimer > maxSeconds)
 			maxSeconds = secondsTimer;
+		
 		//Debug.Log ("Adding time... " + seconds + " seconds.");
 		//Debug.Log ("Seconds Timer = " + secondsTimer);
 		//Debug.Log ("MaxSeconds = " + maxSeconds);
@@ -66,7 +68,7 @@ public class colorTimer : MonoBehaviour {
 			{
 				secondsTimer = 0;
 
-				StartCoroutine(reduceMemoryTime(seconds));
+				StartCoroutine(reduceMemoryTime(seconds/2));
 
 			}
 

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class playerMovement : MonoBehaviour {
 
+	public bool inTransition = false;
+	public bool playerHasMoved = false;
+
 	//used for calculating distance from camera to ground
 	public GameObject ground;
 	public Camera mainCam;
@@ -22,7 +25,8 @@ public class playerMovement : MonoBehaviour {
 	{
 
 		rb = GetComponent<Rigidbody> ();
-
+		mainCam = Camera.main;
+		ground = GameObject.FindGameObjectWithTag ("ground");
 		targetPos = transform.position;
 		isMoving = false;
 
@@ -65,32 +69,34 @@ public class playerMovement : MonoBehaviour {
 
 		//Debug.Log (targetPos);
 		isMoving = true;
+		playerHasMoved = true;
+
 	}
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		
-		if (Input.GetMouseButton (0))
-			SetTargetPosition ();
+		if (!inTransition)
+		{
+			if (Input.GetMouseButton (0))
+				SetTargetPosition ();
 
-		if (isMoving)
-			MovePlayer ();
-		
-		//movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
-		//rb.velocity = movement;
+			if (isMoving)
+				MovePlayer ();
 
-		mousePos = Input.mousePosition;
+			//movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
+			//rb.velocity = movement;
 
-
-		mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
-		mousePos = Camera.main.ScreenToWorldPoint (mousePos);
-
-		mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
-		transform.LookAt (mousePos, Vector3.up);
-		//Debug.Log ("The mousePos is : " + mousePos);
+			mousePos = Input.mousePosition;
 
 
+			mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
+			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
 
-	
+			mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
+			transform.LookAt (mousePos, Vector3.up);
+			//Debug.Log ("The mousePos is : " + mousePos);
+		}
+
+
 	}
 }
