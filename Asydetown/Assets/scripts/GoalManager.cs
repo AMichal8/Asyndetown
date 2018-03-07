@@ -37,6 +37,10 @@ public class GoalManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		if(player == null)
+			player = GameObject.FindGameObjectWithTag ("Player");
+		
+			
 		checkGoalFound();
 		
 	}
