@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114052743289822290}
   - component: {fileID: 65605981237247632}
   - component: {fileID: 114048749656284040}
+  - component: {fileID: 195623001860488160}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -210,6 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a20c5ab9324917340af47b13d82b0205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inTransition: 0
+  playerHasMoved: 0
   ground: {fileID: 0}
   mainCam: {fileID: 0}
   speed: 5
@@ -225,3 +228,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &195623001860488160
+NavMeshAgent:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1208491372425296}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.18
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1
+  m_BaseOffset: 0.5
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

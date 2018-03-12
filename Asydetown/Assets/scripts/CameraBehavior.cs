@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour {
 
-
+	public bool gameOver=false;
 	/*public*/ GameObject target;
 
 	[SerializeField]
@@ -19,6 +19,7 @@ public class CameraBehavior : MonoBehaviour {
 	public float offsetHeight = 20f;
 
 	GameObject player;
+	Vector3 startingPosition;
 	Vector3 playerPosition;
 	Vector3 buildingPosition;
 	Vector3 offset;
@@ -33,6 +34,8 @@ public class CameraBehavior : MonoBehaviour {
 		if (player == null)
 			searchingForPlayer = true;
 			
+		startingPosition = transform.position;
+		Debug.Log ("Camera startingPos = " + startingPosition);
 		startingHeight = transform.position.y;
 		offset = new Vector3 (0, offsetHeight, 0);
 		mainCam = Camera.main;
@@ -48,24 +51,28 @@ public class CameraBehavior : MonoBehaviour {
 	}
 	void LateUpdate () 
 	{
-		if (!searchingForPlayer) 
+		if (!gameOver) 
 		{
-			if(player.GetComponent<playerMovement>().playerHasMoved)
-				FollowPlayer ();
+			if (!searchingForPlayer) 
+			{
+				if(player.GetComponent<playerMovement>().playerHasMoved)
+					FollowPlayer ();
 
-		} 
-		else 
-		{
-			FindPlayer ();
+			} 
+			else 
+			{
+				FindPlayer ();
+			}
+
+			//Move ();
+			//Zoom ();
 		}
-
-		//Move ();
-		//Zoom ();
 	}
+
 	public void zoomToStartingHeight()
 	{
-		offset = new Vector3 (0, startingHeight, 0);
-		transform.position = Vector3.SmoothDamp (transform.position, playerPosition + offset, ref velocity, smoothTime);
+		//offset = new Vector3 (0, offsetHeight * 1.5f , 0);
+		transform.position = Vector3.MoveTowards (transform.position, startingPosition, smoothTime);
 	}
 	void FindPlayer()
 	{

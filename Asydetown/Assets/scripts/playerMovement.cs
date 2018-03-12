@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.AI;
 using UnityEngine;
 
 public class playerMovement : MonoBehaviour {
 
 	public bool inTransition = false;
 	public bool playerHasMoved = false;
+	public bool gameOver = false;
 
 	//used for calculating distance from camera to ground
 	public GameObject ground;
@@ -20,10 +22,12 @@ public class playerMovement : MonoBehaviour {
 	Vector3 targetPos;
 	bool isMoving;
 
+	NavMeshAgent agent;
+
 	// Use this for initialization
 	void Start () 
 	{
-
+		agent = GetComponent<NavMeshAgent> ();
 		rb = GetComponent<Rigidbody> ();
 		mainCam = Camera.main;
 		ground = GameObject.FindGameObjectWithTag ("ground");
@@ -42,13 +46,15 @@ public class playerMovement : MonoBehaviour {
 	void MovePlayer()
 	{
 		
-		transform.LookAt (targetPos);
+		transform.LookAt (targetPos); //Need to have this only play at setting of destination and lock look at to 180 degrees
 
 		Vector3 direction = (targetPos - transform.position).normalized;
 		//Debug.Log (direction + " is direction.");
 
-		rb.MovePosition (transform.position + direction * speed * Time.deltaTime);
-		rb.velocity = Vector3.zero;
+		//rb.MovePosition (transform.position + direction * speed * Time.deltaTime);
+		//rb.velocity = Vector3.zero;
+		agent.speed = speed;
+		agent.destination = targetPos;
 
 		if (Mathf.RoundToInt( transform.position.x) == Mathf.RoundToInt( targetPos.x) && Mathf.RoundToInt(transform.position.z) == Mathf.RoundToInt(targetPos.z)) 
 		{
@@ -75,26 +81,32 @@ public class playerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		if (!inTransition)
+		if (!gameOver) 
 		{
-			if (Input.GetMouseButton (0))
-				SetTargetPosition ();
+			if (!inTransition)
+			{
+				if (Input.GetMouseButton (0))
+					SetTargetPosition ();
 
-			if (isMoving)
-				MovePlayer ();
+				if (isMoving)
+					MovePlayer ();
 
-			//movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
-			//rb.velocity = movement;
-
-			mousePos = Input.mousePosition;
+				//movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
+				//rb.velocity = movement;
 
 
-			mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
-			mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+				//Set LookAt here?
+				mousePos = Input.mousePosition;
 
-			mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
-			transform.LookAt (mousePos, Vector3.up);
-			//Debug.Log ("The mousePos is : " + mousePos);
+
+				mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
+				mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+
+				mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
+				//transform.LookAt (mousePos, Vector3.up);
+				//Debug.Log ("The mousePos is : " + mousePos);
+			}
+
 		}
 
 

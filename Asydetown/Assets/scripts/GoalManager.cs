@@ -6,8 +6,14 @@ using UnityEngine.UI;
 
 public class GoalManager : MonoBehaviour {
 
+
+	public int maxDistance = 15;
+	public int minDistance = 8;
+
+
+
 	[SerializeField]
-	GameObject[] buildings;
+	List<GameObject> buildings;
 
 	public GameManager gm;
 
@@ -17,32 +23,24 @@ public class GoalManager : MonoBehaviour {
 	GameObject previousGoal;
 	GameObject spawnGoal;
 
+	bool beganManaging = false;
+
 	bool targetIsBuildingGoal = false;
 	public Image fade;
 
 	// Use this for initialization
 	void Start () 
 	{
-		player = GameObject.FindGameObjectWithTag ("Player");
-
-		if (buildings == null || buildings.Length ==0)
-			buildings = GameObject.FindGameObjectsWithTag ("building");
-
-
-		randomlySelectGoal ();
-		Debug.Log ("The goal is " + goal);
 		
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-		if(player == null)
-			player = GameObject.FindGameObjectWithTag ("Player");
-		
-			
-		checkGoalFound();
-		
+		if(beganManaging)
+			checkGoalFound();
+
 	}
 	void checkGoalFound()
 	{
@@ -63,6 +61,78 @@ public class GoalManager : MonoBehaviour {
 
 
 			}
+		}
+	}
+
+	public void manageGoal()
+	{
+		player = GameObject.FindGameObjectWithTag ("Player");
+		spawnGoal = gm.playerSpawn;
+
+		if (buildings.Count == 0) 
+		{
+			foreach (GameObject build in GameObject.FindGameObjectsWithTag ("building")) 
+			{
+				buildings.Add (build);
+			}
+				
+		}
+			
+
+		if(spawnGoal ==null)
+			spawnGoal = gm.playerSpawn;
+		
+		if(player == null)
+			player = GameObject.FindGameObjectWithTag ("Player");
+
+		randomlySelectGoal ();
+
+		//Debug.Log ("The goal is " + goal);
+
+		beganManaging = true;
+	}
+
+	void randomlySelectGoal()
+	{
+		if (buildings.Count != 0)
+		{
+			Debug.Log ("Building's length does not equal zero!");
+
+			bool checkPassed = false;
+			float rand;
+
+//			if (spawnGoal == null)
+//				spawnGoal = gm.playerSpawn;
+
+			while (!checkPassed) 
+			{
+				//Debug.Log ("Beginning while loop in goal selection");
+				rand = Random.Range (0, buildings.Count - 1);
+				//Debug.Log ((int)rand + " is the randomly choosen index in array.");
+
+				if ((Mathf.Abs(spawnGoal.transform.position.x - buildings[(int)rand].transform.position.x) < maxDistance && Mathf.Abs(spawnGoal.transform.position.x - buildings[(int)rand].transform.position.x) > minDistance) &&
+					(Mathf.Abs(spawnGoal.transform.position.z - buildings[(int)rand].transform.position.z) < maxDistance && Mathf.Abs(spawnGoal.transform.position.z - buildings[(int)rand].transform.position.z) > minDistance))
+				{
+					goal = buildings [(int)rand];
+					Debug.Log ("The goal is " + goal + " at position: " + goal.transform.position);
+					checkPassed = true;
+
+				}
+				else
+				{
+					//Debug.Log ("Building is not in range... " + " or something else went wrong ):");
+
+					buildings.Remove (buildings [(int)rand]);
+					//Debug.Log ("Removing " + buildings [(int)rand]);
+
+					//rand = Random.Range (0, buildings.Length - 1);
+
+				}
+
+			}
+
+			goal.GetComponent<buildingMemory> ().isGoal = true;
+			targetIsBuildingGoal = true;
 		}
 	}
 
@@ -112,18 +182,7 @@ public class GoalManager : MonoBehaviour {
 		}
 	}
 
-	void randomlySelectGoal()
-	{
-		if (buildings.Length != 0) 
-		{
-			float rand = Random.Range (0, buildings.Length - 1);
-			Debug.Log ((int)rand + " is the randomly choosen index in array.");
-			goal = buildings[(int)rand];
 
-			goal.GetComponent<buildingMemory> ().isGoal = true;
-			targetIsBuildingGoal = true;
-		}
-	}
 	void deSelectGoal()
 	{
 		if (goal != null) 

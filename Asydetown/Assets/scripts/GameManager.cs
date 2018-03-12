@@ -9,18 +9,31 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject playerPrefab;
 	public GameObject playerSpawn;
+
+	GameObject gamePlayer;
+
+	public GoalManager goalMan;
+	[SerializeField]
 	int counter = 0;
 
 	// Use this for initialization
-	void Start () 
+	void Awake () 
 	{
 		if (spawns == null || spawns.Length == 0)
 			spawns = GameObject.FindGameObjectsWithTag ("spawn");
 
+		//goalMan = GetComponent<GoalManager> ();
+
+		InitGame ();
+
+	}
+	void InitGame()
+	{
 		selectSpawnPosition ();
-
 		GameObject player = Instantiate (playerPrefab, playerSpawn.transform.position, transform.rotation) as GameObject;
-
+		gamePlayer = player;
+		Debug.Log ("Calling manageGoal");
+		goalMan.manageGoal ();
 	}
 	void Update()
 	{
@@ -31,8 +44,11 @@ public class GameManager : MonoBehaviour {
 	}
 	IEnumerator endGame()
 	{
+		Camera.main.GetComponent<CameraBehavior> ().gameOver = true;
 		Camera.main.GetComponent<CameraBehavior> ().zoomToStartingHeight ();
-		yield return new WaitForSeconds (1f);
+
+		gamePlayer.GetComponent<playerMovement> ().gameOver = true;
+		yield return new WaitForSeconds (3f);
 		Time.timeScale = 0;
 		
 	}
@@ -41,8 +57,10 @@ public class GameManager : MonoBehaviour {
 		if (spawns.Length != 0) 
 		{
 			float rand = Random.Range (0, spawns.Length - 1);
-			Debug.Log ((int)rand + " is the randomly choosen index in array.");
+			//Debug.Log ((int)rand + " is the randomly choosen index in array.");
 			playerSpawn = spawns [(int)rand];
+			Debug.Log ("GameManager's playerSpawn is " + playerSpawn + " at location " + playerSpawn.transform.position);
+
 		}
 	}
 
