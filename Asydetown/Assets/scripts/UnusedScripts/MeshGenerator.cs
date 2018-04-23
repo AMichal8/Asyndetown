@@ -36,7 +36,7 @@ public class MeshGenerator : MonoBehaviour
 		}
 
 		Mesh mesh = new Mesh ();
-		GetComponent<MeshFilter> ().mesh = mesh;
+		GetComponent<MeshFilter> ().sharedMesh = mesh;
 
 		mesh.vertices = vertices.ToArray ();
 		mesh.triangles = triangles.ToArray ();
@@ -59,6 +59,8 @@ public class MeshGenerator : MonoBehaviour
 			for (int i = 0; i < outline.Count - 1; i++) 
 			{
 				int startIndex = wallvertices.Count;
+				Debug.Log ("The startIndex is the wallvertices.count = " + startIndex);
+
 				wallvertices.Add (vertices [outline [i]]); //left
 				wallvertices.Add (vertices [outline [i+1]]); //right
 				wallvertices.Add (vertices [outline [i]] - Vector3.up * wallHeight); //bottomleft
@@ -74,10 +76,14 @@ public class MeshGenerator : MonoBehaviour
 
 			}
 		}
+
+
+
 		wallMesh.vertices = wallvertices.ToArray ();
 		wallMesh.triangles = wallTris.ToArray ();
+		walls.sharedMesh = wallMesh;
 
-		walls.mesh = wallMesh;
+
 	}
 	void TriangulateSquare(Square square)
 	{
@@ -147,6 +153,7 @@ public class MeshGenerator : MonoBehaviour
 		// 4 points
 		case 15:
 			MeshFromPoints (square.topLeft, square.topRight, square.bottomRight, square.bottomLeft);
+
 			checkedVertices.Add (square.topLeft.vertextIndex);
 			checkedVertices.Add (square.topRight.vertextIndex);
 			checkedVertices.Add (square.bottomRight.vertextIndex);

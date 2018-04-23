@@ -5447,7 +5447,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5520,7 +5520,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11057,8 +11057,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52d5b64cb9f5d94197e98f3fbfe3bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxDistance: 15
-  minDistance: 8
+  maxDistance: 20
+  minDistance: 10
   buildings: []
   gm: {fileID: 1353406119}
   fade: {fileID: 1993628206}
@@ -13613,7 +13613,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.z
@@ -13957,6 +13957,7 @@ MonoBehaviour:
     type: 2}
   playerSpawn: {fileID: 0}
   goalMan: {fileID: 1020793851}
+  counter: 0
 --- !u!4 &1353406120
 Transform:
   m_ObjectHideFlags: 0
@@ -15750,7 +15751,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.z
@@ -15784,6 +15785,11 @@ Prefab:
     - target: {fileID: 1318754916629920, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_Name
       value: spawnPoint (0)
+      objectReference: {fileID: 0}
+    - target: {fileID: 212775379539080214, guid: 482b3aa4c452dd54dafcce477b909c51,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
@@ -17028,6 +17034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c6d94068f8677444b39665ce52ae50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: 0
   smoothTime: 0.4
   offsetHeight: 35
 --- !u!1001 &1609285458
@@ -17043,7 +17050,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 4396576709371206, guid: 482b3aa4c452dd54dafcce477b909c51, type: 2}
       propertyPath: m_LocalPosition.z

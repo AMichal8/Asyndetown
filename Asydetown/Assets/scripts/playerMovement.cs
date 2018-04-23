@@ -46,7 +46,7 @@ public class playerMovement : MonoBehaviour {
 	void MovePlayer()
 	{
 		
-		transform.LookAt (targetPos); //Need to have this only play at setting of destination and lock look at to 180 degrees
+		//transform.LookAt (targetPos); //Need to have this only play at setting of destination and lock look at to 180 degrees
 
 		Vector3 direction = (targetPos - transform.position).normalized;
 		//Debug.Log (direction + " is direction.");
@@ -54,7 +54,8 @@ public class playerMovement : MonoBehaviour {
 		//rb.MovePosition (transform.position + direction * speed * Time.deltaTime);
 		//rb.velocity = Vector3.zero;
 		agent.speed = speed;
-		agent.destination = targetPos;
+		//agent.destination = targetPos;
+		agent.SetDestination (targetPos);
 
 		if (Mathf.RoundToInt( transform.position.x) == Mathf.RoundToInt( targetPos.x) && Mathf.RoundToInt(transform.position.z) == Mathf.RoundToInt(targetPos.z)) 
 		{
