@@ -6,6 +6,7 @@ using UnityEngine;
 public class playerMovement : MonoBehaviour {
 
 	public bool inTransition = false;
+	public bool atStation = false;
 	public bool playerHasMoved = false;
 	public bool gameOver = false;
 
@@ -22,6 +23,7 @@ public class playerMovement : MonoBehaviour {
 	Vector3 targetPos;
 	bool isMoving;
 
+
 	NavMeshAgent agent;
 
 	// Use this for initialization
@@ -36,13 +38,14 @@ public class playerMovement : MonoBehaviour {
 
 
 	}
-
-	void Update()
+	public void setNewPosition(Vector3 newPos)
 	{
-
-
+		transform.position = newPos;
+		Vector3 offset = new Vector3 (-5f, 0, 0);
+		targetPos = newPos + offset;
+		agent.ResetPath ();
+		agent.SetDestination (targetPos);
 	}
-
 	void MovePlayer()
 	{
 		
@@ -79,6 +82,8 @@ public class playerMovement : MonoBehaviour {
 		playerHasMoved = true;
 
 	}
+
+
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
@@ -86,26 +91,30 @@ public class playerMovement : MonoBehaviour {
 		{
 			if (!inTransition)
 			{
-				if (Input.GetMouseButton (0))
-					SetTargetPosition ();
+				if (!atStation) 
+				{
+					if (Input.GetMouseButton (0))
+						SetTargetPosition ();
 
-				if (isMoving)
-					MovePlayer ();
+					if (isMoving)
+						MovePlayer ();
 
-				//movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
-				//rb.velocity = movement;
-
-
-				//Set LookAt here?
-				mousePos = Input.mousePosition;
+					//movement = new Vector3(Input.GetAxis("Horizontal") * speed, 0f, Input.GetAxis("Vertical") * speed);
+					//rb.velocity = movement;
 
 
-				mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
-				mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+					//Set LookAt here?
+					mousePos = Input.mousePosition;
 
-				mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
-				//transform.LookAt (mousePos, Vector3.up);
-				//Debug.Log ("The mousePos is : " + mousePos);
+
+					mousePos.z = Vector3.Distance(mainCam.transform.position, ground.transform.position);
+					mousePos = Camera.main.ScreenToWorldPoint (mousePos);
+
+					mousePos = new Vector3(mousePos.x, transform.position.y, mousePos.z);
+					//transform.LookAt (mousePos, Vector3.up);
+					//Debug.Log ("The mousePos is : " + mousePos);
+				}
+
 			}
 
 		}

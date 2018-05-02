@@ -73,6 +73,7 @@ public class CameraBehavior : MonoBehaviour {
 	{
 		//offset = new Vector3 (0, offsetHeight * 1.5f , 0);
 		transform.position = Vector3.MoveTowards (transform.position, startingPosition, smoothTime);
+
 	}
 	void FindPlayer()
 	{
@@ -104,7 +105,10 @@ public class CameraBehavior : MonoBehaviour {
 		mainCam.fieldOfView = Mathf.Lerp(mainCam.fieldOfView, newZoom, Time.deltaTime);
 
 	}
-
+	public void setToStartingHeight()
+	{
+		transform.position = startingPosition;
+	}
 	float GetBoundsWidth()
 	{
 		

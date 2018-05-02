@@ -157,6 +157,7 @@ public class fieldOfView : MonoBehaviour {
 					currentBuildingMid = null;
 				}
 
+
 			} 
 				
 		}
@@ -184,6 +185,8 @@ public class fieldOfView : MonoBehaviour {
 					currentBuildingLeft.uncontacted ();
 					currentBuildingLeft = null;
 				}
+
+
 
 			} 
 

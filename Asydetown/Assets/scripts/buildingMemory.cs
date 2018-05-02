@@ -22,6 +22,7 @@ public class buildingMemory : MonoBehaviour {
 
 	colorTimer myCT;
 	changeColor mycC;
+	public GoalManager goalMan;
 
 	// Use this for initialization
 	void Start () 
@@ -33,8 +34,11 @@ public class buildingMemory : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{	
-		if (isGoal)
+		if (isGoal) 
+		{
+			increaseImportanceRanking (10);
 			mycC.setGoalColor ();
+		}
 		
 		if (isHit) 
 		{
@@ -79,4 +83,9 @@ public class buildingMemory : MonoBehaviour {
 	{
 		importanceRanking -= decreaseValue;
 	}
+	public void FadeAway()
+	{
+		myCT.FadeTransparency ();
+	}
+
 }

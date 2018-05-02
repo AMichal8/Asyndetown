@@ -9,6 +9,8 @@ public class colorTimer : MonoBehaviour {
 	[SerializeField]
 	float maxSeconds = 0f;
 
+	public bool fadeTransparency = false;
+	public float transparency = 1;
 
 	// Use this for initialization
 	void Start () 
@@ -22,29 +24,31 @@ public class colorTimer : MonoBehaviour {
 	void Update () 
 	{
 
-		if (maxSeconds != 0) {
-			//Debug.Log (secondsTimer / maxSeconds + " is fraction of time.");
-			colorManager.changeObjColor (1, secondsTimer / maxSeconds);
-		} 
-		else 
+		if (maxSeconds != 0) //if has been looked at
 		{
-			colorManager.resetObjColor ();
+			//Debug.Log (secondsTimer / maxSeconds + " is fraction of time.");
+			colorManager.changeObjColor (transparency, secondsTimer / maxSeconds);
+
+			
+		} 
+		else //if hasn't been looked at
+		{
+			if(!fadeTransparency)
+				colorManager.resetObjColor ();
+			else 
+			{
+				transparency -= 1f * Time.deltaTime;
+				colorManager.setTransparency(transparency);
+
+				if (transparency <= 0)
+					this.gameObject.SetActive (false);
+			}
 		}
 	}
-
-//	void OnTriggerEnter (Collider other)
-//	{
-//		addToTimer (10f);
-//	}
-//	void OnTriggerStay(Collider other)
-//	{
-//		addToTimer (4f);
-//	}
-//	void OnTriggerExit(Collider other)
-//	{
-//		StartCoroutine(subtractFromTimer (1f));	
-//	}
-
+	public void FadeTransparency()
+	{
+		fadeTransparency = true;
+	}
 	public void addToTimer(float seconds)
 	{
 		

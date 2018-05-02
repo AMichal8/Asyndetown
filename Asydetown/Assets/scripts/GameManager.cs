@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
 	GameObject gamePlayer;
 
 	public GoalManager goalMan;
+	public StationManager stationMan;
 	[SerializeField]
 	int counter = 0;
 
@@ -34,6 +35,8 @@ public class GameManager : MonoBehaviour {
 		gamePlayer = player;
 		Debug.Log ("Calling manageGoal");
 		goalMan.manageGoal ();
+		stationMan.manageStations ();
+	
 	}
 	void Update()
 	{
@@ -52,6 +55,7 @@ public class GameManager : MonoBehaviour {
 		Time.timeScale = 0;
 		
 	}
+
 	void selectSpawnPosition()
 	{
 		if (spawns.Length != 0) 

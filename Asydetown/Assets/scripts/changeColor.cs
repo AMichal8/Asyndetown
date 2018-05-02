@@ -48,5 +48,10 @@ public class changeColor : MonoBehaviour {
 		myRend.material.SetFloat ("_Transparency", originalTransparency);
 	}
 
+	public void setTransparency(float transparency)
+	{
+		myRend.material.SetFloat ("_Transparency", transparency);
+	}
+
 
 }

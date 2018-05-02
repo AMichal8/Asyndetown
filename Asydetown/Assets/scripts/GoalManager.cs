@@ -9,11 +9,14 @@ public class GoalManager : MonoBehaviour {
 
 	public int maxDistance = 15;
 	public int minDistance = 8;
+	//For Transitional Fades
+	public float FadeInOutSeconds = 2f;
 
 
+	public float buildingFadeTimer = 180f;
 
-	[SerializeField]
-	List<GameObject> buildings;
+	//[SerializeField]
+	public List<GameObject> buildings;
 
 	public GameManager gm;
 
@@ -38,8 +41,25 @@ public class GoalManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		StartCoroutine ("buildingTransparencyTimer");
+
 		if(beganManaging)
 			checkGoalFound();
+
+	}
+	IEnumerator buildingTransparencyTimer()
+	{
+		Debug.Log ("Beginning Time for building's fade");
+		yield return new WaitForSeconds (buildingFadeTimer);
+
+		foreach (GameObject building in buildings) 
+		{
+			if (building.GetComponent<buildingMemory> ().importanceRanking ==0) 
+			{
+				//buildings.Remove (building);
+				building.GetComponent<buildingMemory> ().FadeAway ();
+			}
+		}
 
 	}
 	void checkGoalFound()
@@ -68,11 +88,13 @@ public class GoalManager : MonoBehaviour {
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
 		spawnGoal = gm.playerSpawn;
+		int tagged = 0;
 
 		if (buildings.Count == 0) 
 		{
 			foreach (GameObject build in GameObject.FindGameObjectsWithTag ("building")) 
 			{
+				Debug.Log ("tagged objects: " + ++tagged);
 				buildings.Add (build);
 			}
 				
@@ -122,7 +144,7 @@ public class GoalManager : MonoBehaviour {
 				{
 					//Debug.Log ("Building is not in range... " + " or something else went wrong ):");
 
-					buildings.Remove (buildings [(int)rand]);
+					//buildings.Remove (buildings [(int)rand]);
 					//Debug.Log ("Removing " + buildings [(int)rand]);
 
 					//rand = Random.Range (0, buildings.Length - 1);
@@ -144,7 +166,7 @@ public class GoalManager : MonoBehaviour {
 		if (targetIsBuildingGoal) 
 		{
 			deSelectGoal ();
-			yield return new WaitForSeconds (2f);
+			yield return new WaitForSeconds (FadeInOutSeconds);
 			StartCoroutine ("FadeIn");
 			setSpawnGoal ();
 			player.GetComponent<playerMovement> ().inTransition = false;
@@ -152,7 +174,7 @@ public class GoalManager : MonoBehaviour {
 		else 
 		{
 			deSelectSpawnGoal ();
-			yield return new WaitForSeconds (2f);
+			yield return new WaitForSeconds (FadeInOutSeconds);
 			StartCoroutine ("FadeIn");
 			setPreviousGoal ();
 			player.GetComponent<playerMovement> ().inTransition = false;

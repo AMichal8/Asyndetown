@@ -24,7 +24,6 @@ GameObject:
   - component: {fileID: 23172126402356420}
   - component: {fileID: 54007428032803678}
   - component: {fileID: 114052743289822290}
-  - component: {fileID: 65605981237247632}
   - component: {fileID: 114048749656284040}
   - component: {fileID: 195623001860488160}
   m_Layer: 0
@@ -71,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1208491372425296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1624.1494, y: 2191.9612, z: -284.3412}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4736902100045584}
@@ -171,18 +170,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &65605981237247632
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1208491372425296}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 1.2067494, y: 1, z: 2.121748}
-  m_Center: {x: -0.016099215, y: 0, z: 1.0316505}
 --- !u!114 &114048749656284040
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inTransition: 0
+  atStation: 0
   playerHasMoved: 0
   gameOver: 0
   ground: {fileID: 0}
@@ -229,7 +217,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.63
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!195 &195623001860488160
 NavMeshAgent:
