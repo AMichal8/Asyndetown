@@ -14,6 +14,8 @@ public class playerMovement : MonoBehaviour {
 	public GameObject ground;
 	public Camera mainCam;
 
+	public List<Vector3> pathCorners = new List<Vector3>();
+
 	//used for movement
 	public float speed = 5f;
 	Rigidbody rb;
@@ -26,10 +28,15 @@ public class playerMovement : MonoBehaviour {
 
 	NavMeshAgent agent;
 
+
+
+
 	// Use this for initialization
 	void Start () 
 	{
 		agent = GetComponent<NavMeshAgent> ();
+		pathCorners.Clear ();
+
 		rb = GetComponent<Rigidbody> ();
 		mainCam = Camera.main;
 		ground = GameObject.FindGameObjectWithTag ("ground");
@@ -40,11 +47,13 @@ public class playerMovement : MonoBehaviour {
 	}
 	public void setNewPosition(Vector3 newPos)
 	{
-		transform.position = newPos;
 		Vector3 offset = new Vector3 (-5f, 0, 0);
 		targetPos = newPos + offset;
-		agent.ResetPath ();
+		//agent.updateRotation = false;
+		agent.Warp (newPos);
+		//agent.updateRotation = true;
 		agent.SetDestination (targetPos);
+
 	}
 	void MovePlayer()
 	{
@@ -60,8 +69,10 @@ public class playerMovement : MonoBehaviour {
 		//agent.destination = targetPos;
 		agent.SetDestination (targetPos);
 
+
 		if (Mathf.RoundToInt( transform.position.x) == Mathf.RoundToInt( targetPos.x) && Mathf.RoundToInt(transform.position.z) == Mathf.RoundToInt(targetPos.z)) 
 		{
+
 			rb.velocity = Vector3.zero;
 			isMoving = false;
 			Debug.Log ("Stopped moving.");
@@ -81,8 +92,30 @@ public class playerMovement : MonoBehaviour {
 		isMoving = true;
 		playerHasMoved = true;
 
-	}
+		NavMeshPath path = agent.path;
 
+		//ADDS CORNER LOCATION TO PATHCORNERS LIST
+		for (int i = 0; i < path.corners.Length; i++) 
+		{
+			//Debug.Log ("The length of path.corners is: " + path.corners.Length);
+			Vector3 corner = new Vector3( Mathf.Round(path.corners [i].x), Mathf.Round(path.corners [i].y), Mathf.Round(path.corners [i].z));
+			if(pathCorners.Contains(corner))
+			{
+				//Debug.Log ("Already contains corner: " + corner);
+			}
+			else //need to only add corners if they have walked there...
+				pathCorners.Add (corner);
+		}
+
+
+
+	}
+	public bool getIsMoving()
+	{
+		bool movingStatus;
+		movingStatus = isMoving;
+		return movingStatus;
+	}
 
 	// Update is called once per frame
 	void FixedUpdate () 
@@ -118,6 +151,8 @@ public class playerMovement : MonoBehaviour {
 			}
 
 		}
+		else
+			Debug.Log ("PathCorners contains " + pathCorners.Count + " corners arrays");
 
 
 	}

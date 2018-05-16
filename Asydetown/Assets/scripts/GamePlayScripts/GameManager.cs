@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 		selectSpawnPosition ();
 		GameObject player = Instantiate (playerPrefab, playerSpawn.transform.position, transform.rotation) as GameObject;
 		gamePlayer = player;
-		Debug.Log ("Calling manageGoal");
+		//Debug.Log ("Calling manageGoal");
 		goalMan.manageGoal ();
 		stationMan.manageStations ();
 	
@@ -63,7 +63,17 @@ public class GameManager : MonoBehaviour {
 			float rand = Random.Range (0, spawns.Length - 1);
 			//Debug.Log ((int)rand + " is the randomly choosen index in array.");
 			playerSpawn = spawns [(int)rand];
-			Debug.Log ("GameManager's playerSpawn is " + playerSpawn + " at location " + playerSpawn.transform.position);
+			GameObject spawn;
+
+			for (int i = 0; i < spawns.Length; i++)
+			{
+				if (i != rand)
+				{
+					spawn = spawns [i];
+					spawn.SetActive (false);
+				}
+			}
+			//Debug.Log ("GameManager's playerSpawn is " + playerSpawn + " at location " + playerSpawn.transform.position);
 
 		}
 	}

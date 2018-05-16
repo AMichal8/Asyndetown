@@ -12,6 +12,7 @@ public class GoalManager : MonoBehaviour {
 	//For Transitional Fades
 	public float FadeInOutSeconds = 2f;
 
+	bool startCoroutine = true;
 
 	public float buildingFadeTimer = 180f;
 
@@ -31,17 +32,22 @@ public class GoalManager : MonoBehaviour {
 	bool targetIsBuildingGoal = false;
 	public Image fade;
 
+
+	buildingAlignment bAlign;
 	// Use this for initialization
 	void Start () 
 	{
-		
+		bAlign = GetComponent<buildingAlignment> ();
 
 	}
 
 	// Update is called once per frame
 	void Update () 
 	{
-		StartCoroutine ("buildingTransparencyTimer");
+		if (startCoroutine) {
+			StartCoroutine ("buildingTransparencyTimer");
+			startCoroutine = false;
+		}
 
 		if(beganManaging)
 			checkGoalFound();
@@ -49,7 +55,7 @@ public class GoalManager : MonoBehaviour {
 	}
 	IEnumerator buildingTransparencyTimer()
 	{
-		Debug.Log ("Beginning Time for building's fade");
+		//Debug.Log ("Beginning Time for building's fade");
 		yield return new WaitForSeconds (buildingFadeTimer);
 
 		foreach (GameObject building in buildings) 
@@ -60,6 +66,7 @@ public class GoalManager : MonoBehaviour {
 				building.GetComponent<buildingMemory> ().FadeAway ();
 			}
 		}
+		bAlign.canStartAlignment = true;
 
 	}
 	void checkGoalFound()
@@ -94,7 +101,7 @@ public class GoalManager : MonoBehaviour {
 		{
 			foreach (GameObject build in GameObject.FindGameObjectsWithTag ("building")) 
 			{
-				Debug.Log ("tagged objects: " + ++tagged);
+				
 				buildings.Add (build);
 			}
 				
@@ -118,7 +125,7 @@ public class GoalManager : MonoBehaviour {
 	{
 		if (buildings.Count != 0)
 		{
-			Debug.Log ("Building's length does not equal zero!");
+			//Debug.Log ("Building's length does not equal zero!");
 
 			bool checkPassed = false;
 			float rand;
@@ -136,7 +143,7 @@ public class GoalManager : MonoBehaviour {
 					(Mathf.Abs(spawnGoal.transform.position.z - buildings[(int)rand].transform.position.z) < maxDistance && Mathf.Abs(spawnGoal.transform.position.z - buildings[(int)rand].transform.position.z) > minDistance))
 				{
 					goal = buildings [(int)rand];
-					Debug.Log ("The goal is " + goal + " at position: " + goal.transform.position);
+					//Debug.Log ("The goal is " + goal + " at position: " + goal.transform.position);
 					checkPassed = true;
 
 				}

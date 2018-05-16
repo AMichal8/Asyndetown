@@ -35,7 +35,7 @@ public class CameraBehavior : MonoBehaviour {
 			searchingForPlayer = true;
 			
 		startingPosition = transform.position;
-		Debug.Log ("Camera startingPos = " + startingPosition);
+		//Debug.Log ("Camera startingPos = " + startingPosition);
 		startingHeight = transform.position.y;
 		offset = new Vector3 (0, offsetHeight, 0);
 		mainCam = Camera.main;
