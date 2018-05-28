@@ -23,9 +23,9 @@ public class GoalManager : MonoBehaviour {
 
 	GameObject player;
 
-	GameObject goal;
-	GameObject previousGoal;
-	GameObject spawnGoal;
+	public GameObject goal;
+	public GameObject previousGoal;
+	public GameObject spawnGoal;
 
 	bool beganManaging = false;
 
@@ -33,11 +33,12 @@ public class GoalManager : MonoBehaviour {
 	public Image fade;
 
 
-	buildingAlignment bAlign;
+	MoveClusters clusterMan;
 	// Use this for initialization
 	void Start () 
 	{
-		bAlign = GetComponent<buildingAlignment> ();
+		clusterMan = GetComponent<MoveClusters> ();
+		clusterMan.enabled = false;
 
 	}
 
@@ -66,7 +67,14 @@ public class GoalManager : MonoBehaviour {
 				building.GetComponent<buildingMemory> ().FadeAway ();
 			}
 		}
-		bAlign.canStartAlignment = true;
+		StartCoroutine ("enableClusters");
+
+	}
+	IEnumerator enableClusters()
+	{
+		yield return new WaitForSeconds (3.75f);
+		clusterMan.enabled = true;
+
 
 	}
 	void checkGoalFound()

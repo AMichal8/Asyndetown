@@ -8,6 +8,7 @@ TagManager:
   - spawn
   - ground
   - station
+  - Cluster
   layers:
   - Default
   - TransparentFX

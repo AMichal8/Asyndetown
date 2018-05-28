@@ -33,8 +33,8 @@ public class buildingAlignment : MonoBehaviour {
 			StartCoroutine ("StartAlignment");
 		}
 
-		if(canMoveBuildings)
-			MoveBuildings();
+//		if(canMoveBuildings)
+//			MoveBuildings();
 
 
 	}
@@ -67,31 +67,31 @@ public class buildingAlignment : MonoBehaviour {
 			}
 		}
 	}
-	void MoveBuildings()
-	{
-		Debug.Log ("Enter movebuildings");
-		Vector3 straightPath = (buildingGoalPos - spawnGoalPos).normalized;
-
-		float pathBuildingCountDistance = 1 / (float)activeBuildings.Count;
-		Debug.Log (activeBuildings.Count + " is the list count");
-		Debug.Log (pathBuildingCountDistance + " is the count distance");
-
-		float count = 1;
-
-		Debug.Log ("StraightPath is " + straightPath);
-
-		foreach (GameObject building in activeBuildings) 
-		{
-			Vector3 targetPos = spawnGoalPos + straightPath * pathBuildingCountDistance * count;
-			Debug.Log ("Building: " + building + " is moving towards position: " + targetPos);
-			
-			building.transform.position = Vector3.MoveTowards (building.transform.position, targetPos, 5 * Time.deltaTime);
-			Debug.Log ("Called movetowards");
-			count++;
-		}
-
-
-	}
+//	void MoveBuildings()
+//	{
+//		Debug.Log ("Enter movebuildings");
+//		Vector3 straightPath = (buildingGoalPos - spawnGoalPos).normalized;
+//
+//		float pathBuildingCountDistance = 1 / (float)activeBuildings.Count;
+//		Debug.Log (activeBuildings.Count + " is the list count");
+//		Debug.Log (pathBuildingCountDistance + " is the count distance");
+//
+//		float count = 1;
+//
+//		Debug.Log ("StraightPath is " + straightPath);
+//
+//		foreach (GameObject building in activeBuildings) 
+//		{
+//			Vector3 targetPos = spawnGoalPos + straightPath * pathBuildingCountDistance * count;
+//			Debug.Log ("Building: " + building + " is moving towards position: " + targetPos);
+//			
+//			building.transform.position = Vector3.MoveTowards (building.transform.position, targetPos, 5 * Time.deltaTime);
+//			Debug.Log ("Called movetowards");
+//			count++;
+//		}
+//
+//
+//	}
 //	void Align()
 //	{
 //		

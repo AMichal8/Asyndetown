@@ -151,8 +151,8 @@ public class playerMovement : MonoBehaviour {
 			}
 
 		}
-		else
-			Debug.Log ("PathCorners contains " + pathCorners.Count + " corners arrays");
+//		else
+//			Debug.Log ("PathCorners contains " + pathCorners.Count + " corners arrays");
 
 
 	}
