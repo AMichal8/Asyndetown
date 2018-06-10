@@ -9,12 +9,14 @@ public class MoveClusters : MonoBehaviour {
 
 	Vector3 fromSpawnToGoal;
 	Vector3 fromGoalToSpawn;
+	public Vector3 ClustersCenter;
 
 	Bounds clusterBounds1;
 	Bounds clusterBounds2;
 
 	public GoalManager goalMan;
 
+	bool shouldMoveCluster;
 
 	//New MoveCluster should be created when ready to us
 	// Use this for initialization
@@ -33,7 +35,8 @@ public class MoveClusters : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		moveClusters ();
+		if(shouldMoveCluster)
+			moveClusters ();
 	}
 
 	void groupClusters()
@@ -50,6 +53,9 @@ public class MoveClusters : MonoBehaviour {
 		Vector3 fromGoaltoGoal = cluster1.transform.position - cluster2.transform.position;
 		float fromGoaltoGoalDist = Mathf.Round(fromGoaltoGoal.magnitude);
 		float dist = fromGoaltoGoalDist / 2;
+
+		ClustersCenter = (fromGoaltoGoal.normalized * dist) + cluster2.transform.position;
+
 		//Debug.Log (fromGoaltoGoalDist + " is the distance from goal to goal. And " + dist + " is half of that distance.");
 
 		//get array of colliders via overlapsphere
@@ -112,11 +118,14 @@ public class MoveClusters : MonoBehaviour {
 		Debug.Log ((fromSpawnToGoal * .5f).ToString ());
 
 		float fromSpawnToGoalMag = fromSpawnToGoal.magnitude;
+		Debug.Log ("FromSpawnToGoal third magnitude: " + fromSpawnToGoalMag * .3f);
 		float fromGoalToSpawnMag = fromGoalToSpawn.magnitude;
-
+		Debug.Log ("FromGoalToSpawn third magnitude: " + fromGoalToSpawnMag * .3f);
 
 		float cB1radius = clusterBounds1.extents.magnitude;
+		Debug.Log ("Cluster1 Bounds Extents magnitude: " + cB1radius);
 		float cB2radius = clusterBounds2.extents.magnitude;
+		Debug.Log ("Cluster2 Bounds Extents magnitude: " + cB2radius);
 
 		fromSpawnToGoal = fromSpawnToGoal.normalized * (fromSpawnToGoalMag*.5f + cB1radius) ;// sets the magnitude to half the original magnitude minus the extends magnitude
 		//Debug.Log(fromSpawnToGoal + "is the S2G vector");
@@ -127,6 +136,11 @@ public class MoveClusters : MonoBehaviour {
 		//Debug.Log(fromGoalToSpawn + "is the G2S vector");
 
 		fromGoalToSpawn += cluster1.transform.position;
+
+		if ((Mathf.Round(cB1radius) < fromSpawnToGoalMag * .3f) && (Mathf.Round(cB2radius) < fromSpawnToGoalMag * .3f))
+			shouldMoveCluster = true;
+		else
+			shouldMoveCluster = false;
 
 
 	}

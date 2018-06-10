@@ -37,7 +37,7 @@ public class colorTimer : MonoBehaviour {
 				colorManager.resetObjColor ();
 			else 
 			{
-				transparency -= 1f * Time.deltaTime;
+				transparency -= .15f * Time.deltaTime;
 				colorManager.setTransparency(transparency);
 
 				if (transparency <= 0)

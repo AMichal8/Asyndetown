@@ -15,10 +15,11 @@ public class UIControls : MonoBehaviour {
 		
 	}
 
-	public void StartGame()
+	public void LoadLevel(int buildIndex)
 	{
-		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex + 1);
+		SceneManager.LoadScene (buildIndex);
 	}
+
 	public void ExitGame()
 	{
 		Debug.Log ("Quit");

@@ -12,9 +12,9 @@ public class GoalManager : MonoBehaviour {
 	//For Transitional Fades
 	public float FadeInOutSeconds = 2f;
 
-	bool startCoroutine = true;
+	public bool startCoroutine = false;
 
-	public float buildingFadeTimer = 180f;
+	//public float buildingFadeTimer = 180f;
 
 	//[SerializeField]
 	public List<GameObject> buildings;
@@ -53,11 +53,13 @@ public class GoalManager : MonoBehaviour {
 		if(beganManaging)
 			checkGoalFound();
 
+
+
 	}
 	IEnumerator buildingTransparencyTimer()
 	{
 		//Debug.Log ("Beginning Time for building's fade");
-		yield return new WaitForSeconds (buildingFadeTimer);
+		yield return new WaitForSeconds (1f);
 
 		foreach (GameObject building in buildings) 
 		{
@@ -67,7 +69,7 @@ public class GoalManager : MonoBehaviour {
 				building.GetComponent<buildingMemory> ().FadeAway ();
 			}
 		}
-		StartCoroutine ("enableClusters");
+
 
 	}
 	IEnumerator enableClusters()
@@ -251,13 +253,12 @@ public class GoalManager : MonoBehaviour {
 		spawnGoal = gm.playerSpawn;
 
 	}
-	void deSelectSpawnGoal()
+	public void deSelectSpawnGoal()
 	{
 		Color tempColor = gm.playerSpawn.GetComponent<SpriteRenderer> ().color;
 		tempColor.a = 0f;
 		spawnGoal.GetComponent<SpriteRenderer> ().color = tempColor;
 		spawnGoal.GetComponent<spawnBehavior> ().isTarget = false;
-		spawnGoal = null;
 
 
 	}

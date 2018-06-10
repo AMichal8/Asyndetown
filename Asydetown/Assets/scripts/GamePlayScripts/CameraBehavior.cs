@@ -75,6 +75,11 @@ public class CameraBehavior : MonoBehaviour {
 		transform.position = Vector3.MoveTowards (transform.position, startingPosition, smoothTime);
 
 	}
+	public void zoomOnClusters(Vector3 clustersCenter)
+	{
+		Vector3 newCamPos = new Vector3 (clustersCenter.x, startingHeight, clustersCenter.z);
+		transform.position = Vector3.MoveTowards (transform.position, newCamPos, smoothTime);
+	}
 	void FindPlayer()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");

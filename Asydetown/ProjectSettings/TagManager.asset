@@ -9,6 +9,7 @@ TagManager:
   - ground
   - station
   - Cluster
+  - walls
   layers:
   - Default
   - TransparentFX

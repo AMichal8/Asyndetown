@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
@@ -17,11 +18,18 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	int counter = 0;
 
+	GameObject walls;
+
+	bool beginFade = true;
+
 	// Use this for initialization
 	void Awake () 
 	{
 		if (spawns == null || spawns.Length == 0)
 			spawns = GameObject.FindGameObjectsWithTag ("spawn");
+
+		if (walls == null)
+			walls = GameObject.FindGameObjectWithTag ("walls");
 
 		//goalMan = GetComponent<GoalManager> ();
 
@@ -40,19 +48,55 @@ public class GameManager : MonoBehaviour {
 	}
 	void Update()
 	{
+		if (counter >= maxRounds-1 && beginFade) 
+		{
+			goalMan.startCoroutine = true;
+			beginFade = false;
+		}
+
 		if (counter >= maxRounds) 
 		{
 			StartCoroutine ("endGame");
 		}
+
+		if (Input.GetKeyDown (KeyCode.R))
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+		if (Input.GetKeyDown (KeyCode.Escape))
+			Application.Quit ();
+		if (Input.GetKeyDown (KeyCode.Space))
+			SceneManager.LoadScene (0);
+			
 	}
 	IEnumerator endGame()
 	{
 		Camera.main.GetComponent<CameraBehavior> ().gameOver = true;
-		Camera.main.GetComponent<CameraBehavior> ().zoomToStartingHeight ();
+		Camera.main.GetComponent<CameraBehavior> ().zoomToStartingHeight (); //change zoom to the building clusters
+
 
 		gamePlayer.GetComponent<playerMovement> ().gameOver = true;
+		goalMan.StartCoroutine ("enableClusters");
+
+
 		yield return new WaitForSeconds (3f);
-		Time.timeScale = 0;
+
+
+		Camera.main.GetComponent<CameraBehavior> ().zoomOnClusters (goalMan.GetComponent<MoveClusters>().ClustersCenter); 
+
+		//delete/disable player
+		if (gamePlayer.activeInHierarchy)
+			gamePlayer.SetActive(false);
+		
+		//delete/disable trainstations
+		foreach (GameObject station in stationMan.stations) 
+		{
+			if (station.activeInHierarchy)
+				station.SetActive(false);
+		}
+		//disable spawngoal
+		goalMan.deSelectSpawnGoal();
+
+		if (walls != null)
+			walls.SetActive (false);
 		
 	}
 
