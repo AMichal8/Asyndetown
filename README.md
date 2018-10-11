@@ -1,6 +1,8 @@
 # Asyndetown
 Repository for Project Asyndetown.
 
+Design by [bs](https://wreckem.itch.io), programming by [am](https://lashghost.itch.io) and animation by [ak](https://untamedarts.itch.io)
+
 # To Play
 This is your daily commute. Walk or take the subway and see how the world around you changes.
 
@@ -14,4 +16,3 @@ Asyndetown was built in Unity. Builds are available for Windows and Mac. Unity s
 
 [Asyndetown (Mac)](https://github.com/AMichal8/Asyndetown/releases/download/v.08-mac/Asyndetown.app.zip)
 
-Design by [bs](https://wreckem.itch.io), programming by [am](https://lashghost.itch.io) and animation by [ak](https://untamedarts.itch.io)
